@@ -1,0 +1,81 @@
+
+--run install dependencies
+    npm intall
+
+--run dev
+    npm run dev
+
+--build folder production
+    npm run build
+
+--run folder production
+    npm start
+
+--routes
+
+    POST
+        description: Singup
+        api: http://localhost:5000/api/auth/signup
+        body: {
+            "userName": "test",
+            "email": "test@gmail.com",
+            "password": "123456"
+        }
+
+    POST
+        description: Signin
+        api: http://localhost:5000/api/auth/signin
+        body: {
+            "email": "test@gmail.com",
+            "password": "123456"
+        }
+
+    GET
+        description: Get all products
+        api: http://localhost:5000/api/products
+
+    GET
+        description: Get single product
+        api: http://localhost:5000/api/products/productId
+        example: http://localhost:5000/api/products/6054326d9097722718731caa
+
+    DELETE
+        description: Delete product (required role admin)
+        api: http://localhost:5000/api/products/productId
+        example: http://localhost:5000/api/products/6054326d9097722718731caa
+        header: {
+            "Content-Type": "application/json",
+            "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNTdkYzI1OGY1ZDkyMjg1YzI3ZGQwMSIsImlhdCI6MTYxNjM3MDcyNSwiZXhwIjoxNjE2NDU3MTI1fQ.5uY66B3t5vmRYI9R20uNJRovBF_l_2AzPjkoQPxpvGA"
+        }
+
+    Note: x-access-token is my token
+
+    POST
+        description: Create product (required role admin)
+        api: http://localhost:5000/api/products
+        body: {
+            "name": "Laptop HP",
+            "category": "laptops",
+            "price": "999.99",
+            "imgURL": "https://www.elgallomasgallo.com.hn/media/catalog/product/1/6/168145_1.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700"
+        }
+        header: {
+            "Content-Type": "application/json",
+            "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNTdkYzI1OGY1ZDkyMjg1YzI3ZGQwMSIsImlhdCI6MTYxNjM3MDcyNSwiZXhwIjoxNjE2NDU3MTI1fQ.5uY66B3t5vmRYI9R20uNJRovBF_l_2AzPjkoQPxpvGA"
+        }
+
+    Note: x-access-token is my token
+
+    PUT
+        description: Update product (required role admin)
+        api: http://localhost:5000/api/products/productId
+        example: http://localhost:5000/api/products/6054326d9097722718731caa
+        body: {
+            "name": "Laptop HP T 400"
+        }
+        header: {
+            "Content-Type": "application/json",
+            "x-access-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNTdkYzI1OGY1ZDkyMjg1YzI3ZGQwMSIsImlhdCI6MTYxNjM3MDcyNSwiZXhwIjoxNjE2NDU3MTI1fQ.5uY66B3t5vmRYI9R20uNJRovBF_l_2AzPjkoQPxpvGA"
+        }
+
+    Note: x-access-token is my token
